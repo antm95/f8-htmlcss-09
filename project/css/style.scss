@@ -1,0 +1,231 @@
+// ***** Variables *****
+// -- Colors
+$bg-color: #131517;
+// -- Fonts
+$font-stack: "Sora", sans-serif;
+// -- Resolution Mobile
+$mobile-width: 46.25em;
+// *********************
+
+// ***** Mixins *****
+@mixin container($wContainer: 1220px) {
+    width: $wContainer;
+}
+@mixin resizeBtn($wBtn: 200px, $hBtn: 54px, $radiusBtn: 8px) {
+    min-width: $wBtn;
+    height: $hBtn;
+    border-radius: $radiusBtn;
+}
+@mixin mobile {
+    @media (max-width: $mobile-width) {
+        @content;
+    }
+}
+// ******************
+
+// ***** TAG's SET *****
+* {
+    // Box Model
+    box-sizing: border-box;
+}
+html {
+    // Text
+    font-size: 62.5%;
+    // Animator
+    scroll-behavior: smooth;
+}
+body {
+    // Text
+    font: 1.6rem $font-stack;
+    // Color
+    color: #fff;
+    background-color: $bg-color;
+}
+a {
+    // Text
+    text-decoration: none;
+}
+input,
+textarea,
+select,
+button {
+    /* Text */
+    font: inherit;
+}
+// *********************
+
+// ***** COMMON CLASSES *****
+.container {
+    // Mixins
+    @include container();
+    // Box Model
+    display: block;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+}
+.btn {
+    // Mixins
+    @include resizeBtn();
+    // Flexbox Model
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    // Box Model
+    border: 1px solid;
+    // Text
+    font-weight: 400;
+    // Other
+    cursor: pointer;
+    transition-duration: 0.3s;
+    // Classes
+    &--border-theme {
+        // Color
+        color: #f9f9f9;
+        background-color: #eb9204;
+        background: linear-gradient(90deg, #eb9204 -33.14%, #83e868 116.38%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-color: #272633;
+        // Classes
+        &:hover {
+            border-color: #83e868;
+        }
+    }
+    &--fill-theme,
+    &--fill-gradient-theme {
+        // Color
+        color: #f9f9f9;
+        border-color: transparent;
+    }
+    &--fill-theme {
+        // Color
+        background-color: #282c30;
+    }
+    &--fill-gradient-theme {
+        // Color
+        background: linear-gradient(90deg, #eb9204 -33.14%, #83e868 116.38%);
+    }
+}
+// **************************
+
+// ***** < PC > *****
+// +++++ HEADER +++++
+// ===== Header Top =====
+.header-top {
+    // Box Model
+    padding: 12px 0;
+    margin-top: 28px;
+    @include mobile {
+        margin-top: 18px;
+    }
+    // Color
+    background-color: $bg-color;
+    // Classes
+    .container {
+        // Mixins
+        @include container(1144px);
+        @include mobile {
+            @include container(319px);
+        }
+    }
+    &--sticky {
+        // Positioning
+        position: sticky;
+        top: 0;
+        z-index: 99;
+    }
+    &__inner {
+        // Flexbox Model
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    // Logo
+    &__logo {
+        // Box Model
+        @include mobile {
+            height: 11px;
+        }
+    }
+    // Navigation Bar
+    &__nav {
+        // Classes
+        &-list {
+            // Flexbox Model
+            display: flex;
+            align-items: center;
+        }
+        &-link {
+            // Positioning
+            position: relative;
+            // Box Model
+            padding: 12px 18px;
+            // Color
+            color: #858b93;
+            // Text
+            font-weight: 400;
+            line-height: 1.5;
+            // Classes
+            &--active,
+            &:hover {
+                // Color
+                color: #f9f9f9;
+            }
+            &--active::after,
+            &:hover::after {
+                // Positioning
+                position: absolute;
+                bottom: 7px;
+                left: 18px;
+                // Box Model
+                display: inline-block;
+                content: "";
+                width: 21px;
+                height: 2px;
+                // Color
+                background-color: #6aea5c;
+            }
+        }
+        @include mobile {
+            display: none;
+        }
+    }
+    &__buttons {
+        // Flexbox Model
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+    }
+    &__cta {
+        // Mixins
+        @include resizeBtn(110px, 40px, 8px);
+        @include mobile {
+            @include resizeBtn(80px, 30px, 6px);
+            // Text
+            font-size: 1.2rem;
+        }
+    }
+    &__menu-mobile {
+        // Flexbox Model
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        // display: none;
+        width: 24px;
+        height: 16px;
+        &-line {
+            // Box Model
+            width: 100%;
+            height: 2.3px;
+            // Color
+            background-color: #9fa2a8;
+        }
+        @include mobile {
+            display: flex;
+        }
+    }
+}
+// ===== ========== =====
+// ++++++++++++++++++
+// ******************
