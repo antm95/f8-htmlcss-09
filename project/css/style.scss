@@ -40,6 +40,8 @@ body {
     // Color
     color: #fff;
     background-color: $bg-color;
+    // Other
+    user-select: none;
 }
 a {
     // Text
@@ -72,11 +74,13 @@ button {
     align-items: center;
     // Box Model
     border: 1px solid;
+    // Color
+    background-size: 300% 100%;
     // Text
     font-weight: 400;
     // Other
     cursor: pointer;
-    transition-duration: 0.3s;
+    transition: all 0.3s ease-in-out;
     // Classes
     &--border-theme {
         // Color
@@ -101,15 +105,27 @@ button {
     &--fill-theme {
         // Color
         background-color: #282c30;
+        &:hover {
+            // Color
+            background-color: #83e868;
+        }
     }
     &--fill-gradient-theme {
         // Color
-        background: linear-gradient(90deg, #eb9204 -33.14%, #83e868 116.38%);
+        background-image: linear-gradient(
+            90deg,
+            #eb9204,
+            #83e868,
+            #83e868,
+            #eb9204
+        );
+        &:hover {
+            background-position: 100% 0;
+        }
     }
 }
 // **************************
 
-// ***** < PC > *****
 // +++++ HEADER +++++
 // ===== Header Top =====
 .header-top {
@@ -227,5 +243,428 @@ button {
     }
 }
 // ===== ========== =====
+
+// ===== Header Hero =====
+.header-hero {
+    // Classes
+    .container {
+        // Mixins
+        @include container(1144px);
+        @include mobile {
+            @include container(319px);
+        }
+    }
+    // Header Hero Inner
+    &__inner {
+        // Positioning
+        position: relative;
+        // Box Model
+        padding-top: 138px;
+        @include mobile {
+            padding-top: 50px;
+        }
+    }
+    // Header Hero Heading & Desc
+    &__heading {
+        // Positioning
+        position: relative;
+        // Box Model
+        width: 784px;
+        margin: 0 auto;
+        @include mobile {
+            width: 298px;
+        }
+        // Text
+        font-weight: 700;
+        font-size: 6rem;
+        line-height: 1.17;
+        text-align: center;
+        @include mobile {
+            font-weight: 600;
+            font-size: 3rem;
+            line-height: 1.27;
+        }
+        // Classes
+        &-gradient-text {
+            // Positioning
+            position: relative;
+            // Display
+            display: inline-block;
+            // Color
+            background: linear-gradient(to right, #eb9204 -34%, #83e868 116%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            // Classes
+            &::after {
+                // Positioning
+                position: absolute;
+                z-index: -1;
+                top: -4px;
+                left: -4px;
+                // Box Model
+                content: "";
+                width: 418px;
+                height: 76px;
+                border: 1px dashed #fff;
+                // Color
+                background-color: #20262d;
+                // Mixins
+                @include mobile {
+                    // Positioning
+                    top: -8px;
+                    // Box Model
+                    width: 210px;
+                    height: 47px;
+                }
+            }
+            &-circle-1,
+            &-circle-2,
+            &-circle-3,
+            &-circle-4 {
+                // Positioning
+                position: absolute;
+                top: 0;
+                left: 0;
+                // Box Model
+                width: 10px;
+                height: 10px;
+                // Mixins
+                @include mobile {
+                    width: 6px;
+                    height: 6px;
+                }
+            }
+            &-circle-1 {
+                // Positioning
+                top: -14px;
+                left: -14px;
+                // Box Model
+                border-radius: 50% 50% 0 50%;
+                // Color
+                background-color: #ae8ff9;
+                // Mixins
+                @include mobile {
+                    // Positioning
+                    left: -10px;
+                }
+            }
+            &-circle-2 {
+                // Positioning
+                top: -14px;
+                left: initial;
+                right: -18px;
+                // Box Model
+                border-radius: 50% 50% 50% 0;
+                // Color
+                background-color: #ef8f00;
+                // Mixins
+                @include mobile {
+                    // Positioning
+                    right: -10px;
+                }
+            }
+            &-circle-3 {
+                // Positioning
+                top: initial;
+                bottom: -14px;
+                left: -14px;
+                // Box Model
+                border-radius: 50% 0 50% 50%;
+                // Color
+                background-color: #ff7667;
+                // Mixins
+                @include mobile {
+                    // Positioning
+                    bottom: -8px;
+                    left: -10px;
+                }
+            }
+            &-circle-4 {
+                // Positioning
+                top: initial;
+                bottom: -14px;
+                left: initial;
+                right: -18px;
+                // Box Model
+                border-radius: 0 50% 50% 50%;
+                // Color
+                background-color: #0cce84;
+                // Mixins
+                @include mobile {
+                    // Positioning
+                    bottom: -8px;
+                    right: -10px;
+                }
+            }
+        }
+        &-decor-circle {
+            // Positioning
+            position: absolute;
+            bottom: 6px;
+            right: 53px;
+            // Box Model
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            // Color
+            background-color: #ff7667;
+            // Mixins
+            @include mobile {
+                // Positioning
+                bottom: 2px;
+                right: 70px;
+            }
+        }
+    }
+    &__desc {
+        // Box Model
+        width: 446px;
+        margin: 38px auto 0;
+        // Text
+        font-weight: 400;
+        line-height: 1.625;
+        text-align: center;
+        // Color
+        color: #858b93;
+        // -Mixins
+        @include mobile {
+            // Display
+            display: none;
+        }
+    }
+    // Header Hero Buttons
+    &__buttons {
+        // Flexbox Model
+        display: flex;
+        justify-content: center;
+        column-gap: 20px;
+        // Box Model
+        margin-top: 44px;
+        // Mixins
+        @include mobile {
+            // Flexbox Model
+            flex-direction: column;
+            row-gap: 20px;
+            // Box Model
+            padding: 0 87px;
+            margin-top: 30px;
+        }
+    }
+    &__btn {
+        // Mixins
+        @include mobile {
+            // Mixins
+            @include resizeBtn(144px, 40px);
+            // Text
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+    }
+    // Header Hero Media
+    &__media {
+        // Positioning
+        position: relative;
+        // Box Model
+        height: 512px;
+        margin-top: 110px;
+        // Mixins
+        @include mobile {
+            // Box Model
+            height: 160px;
+            margin-top: 82px;
+        }
+        // Classes
+        // Header Hero Media Decor
+        &-decor {
+            // Positioning
+            position: absolute;
+            top: 0;
+            left: 0;
+            // Box Model
+            border-radius: 50%;
+            // Classes
+            &:nth-of-type(1) {
+                // Positioning
+                top: 158px;
+                left: initial;
+                right: 50px;
+                // Box Model
+                width: 154px;
+                height: 154px;
+                // Color
+                background: linear-gradient(
+                    183.21deg,
+                    #8ae764 1.17%,
+                    #e99506 115.87%
+                );
+                box-shadow: inset 0px 39px 31px #113719;
+                // Mixins
+                @include mobile {
+                    // Positioning
+                    top: 46px;
+                    right: 0;
+                    // Box Model
+                    width: 50px;
+                    height: 50px;
+                    // Color
+                    box-shadow: inset 0px 12px 10px #113719;
+                }
+            }
+            &:nth-of-type(2) {
+                // Positioning
+                top: initial;
+                bottom: 73px;
+                left: 58px;
+                // Box Model
+                width: 90px;
+                height: 90px;
+                // Color
+                background: linear-gradient(
+                    179.83deg,
+                    #111118 6.06%,
+                    rgba(43, 43, 61, 0) 119.38%
+                );
+                box-shadow: inset 0px 39px 31px #313141;
+                // Mixins
+                @include mobile {
+                    // Positioning
+                    bottom: 20px;
+                    left: 0;
+                    // Box Model
+                    width: 30px;
+                    height: 30px;
+                    // Color
+                    box-shadow: inset 0px 16px 10px #313141;
+                }
+            }
+        }
+        // Header Hero Media Images
+        &-img {
+            // Positioning
+            position: absolute;
+            top: 0;
+            left: 0;
+            // Resize
+            object-fit: cover;
+            // Classes
+            &:nth-of-type(1) {
+                // Positioning
+                left: initial;
+                right: 116px;
+                // Box Model
+                width: 848px;
+                height: 366px;
+                border-radius: 8px 8px 0px 0px;
+                // Mixins
+                @include mobile {
+                    // Positioning
+                    right: 24px;
+                    // Box Model
+                    width: 265px;
+                    height: auto;
+                }
+            }
+            &:nth-of-type(2) {
+                // Positioning
+                top: initial;
+                bottom: 0;
+                left: 105px;
+                // Box Model
+                width: 216px;
+                height: 356px;
+                border-radius: 15px 15px 22px 22px;
+                // Mixins
+                @include mobile {
+                    // Positioning
+                    left: 14px;
+                    // Box Model
+                    width: 67.5px;
+                    height: auto;
+                }
+            }
+        }
+    }
+    // Header Hero Decor Circles
+    &__decor {
+        &-circles-1,
+        &-circles-2 {
+            // Positioning
+            position: absolute;
+            top: 78px;
+            left: 0;
+            // Flexbox Model
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            // Box Model
+            width: 121px;
+            height: 315px;
+            @include mobile {
+                // Box Model
+                width: 24px;
+                height: 64px;
+            }
+        }
+        &-circles-1 {
+            // Positioning
+            left: 28px;
+            // Mixins
+            @include mobile {
+                // Positioning
+                top: -16px;
+                left: 58px;
+                // Transform
+                rotate: -90deg;
+            }
+        }
+        &-circles-2 {
+            // Positioning
+            left: initial;
+            right: 28px;
+            // Mixins
+            @include mobile {
+                // Positioning
+                top: 146px;
+                right: 18px;
+            }
+        }
+        &-circle-1,
+        &-circle-2,
+        &-circle-3,
+        &-circle-4 {
+            // Box Model
+            border-radius: 50%;
+            // Color
+            background: linear-gradient(
+                179.83deg,
+                #111118 6.06%,
+                rgba(43, 43, 61, 0) 119.38%
+            );
+            box-shadow: inset 0px 39px 31px #313141;
+        }
+        &-circle-1 {
+            // Box Model
+            width: 100%;
+            padding-top: 100%;
+        }
+        &-circle-2 {
+            // Box Model
+            width: 32%;
+            padding-top: 32%;
+        }
+        &-circle-3 {
+            // Box Model
+            width: 21%;
+            padding-top: 21%;
+        }
+        &-circle-4 {
+            // Box Model
+            width: 12%;
+            padding-top: 12%;
+        }
+    }
+}
+// ===== =========== =====
 // ++++++++++++++++++
-// ******************
