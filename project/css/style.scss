@@ -300,22 +300,16 @@ button {
                 // Positioning
                 position: absolute;
                 z-index: -1;
-                top: -4px;
-                left: -4px;
+                inset: -4px -8px -4px -4px;
                 // Box Model
                 content: "";
-                width: 418px;
-                height: 76px;
                 border: 1px dashed #fff;
                 // Color
                 background-color: #20262d;
                 // Mixins
                 @include mobile {
                     // Positioning
-                    top: -8px;
-                    // Box Model
-                    width: 21rem;
-                    height: 4.7rem;
+                    inset: -8px -4px -2px -4px;
                 }
             }
             &-circle-1,
