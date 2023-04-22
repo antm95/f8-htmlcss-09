@@ -97,7 +97,7 @@ button {
 }
 .header-top--sticky {
   position: sticky;
-  top: 0;
+  top: -1px;
   z-index: 99;
 }
 .header-top__inner {
@@ -236,8 +236,8 @@ button {
 @media (max-width: 46.25em) {
   .header-hero__heading-gradient-text::after {
     top: -8px;
-    width: 210px;
-    height: 47px;
+    width: 21rem;
+    height: 4.7rem;
   }
 }
 .header-hero__heading-gradient-text-circle-1, .header-hero__heading-gradient-text-circle-2, .header-hero__heading-gradient-text-circle-3, .header-hero__heading-gradient-text-circle-4 {

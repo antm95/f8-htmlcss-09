@@ -148,7 +148,7 @@ button {
     &--sticky {
         // Positioning
         position: sticky;
-        top: 0;
+        top: -1px;
         z-index: 99;
     }
     &__inner {
@@ -314,8 +314,8 @@ button {
                     // Positioning
                     top: -8px;
                     // Box Model
-                    width: 210px;
-                    height: 47px;
+                    width: 21rem;
+                    height: 4.7rem;
                 }
             }
             &-circle-1,
