@@ -496,4 +496,116 @@ button {
 .header-hero__decor-circle-4 {
   width: 12%;
   padding-top: 12%;
+}
+
+.service {
+  margin-top: 140px;
+}
+@media (max-width: 46.25em) {
+  .service {
+    margin-top: 80px;
+  }
+}
+.service .container {
+  width: 1096px;
+}
+@media (max-width: 46.25em) {
+  .service .container {
+    width: 319px;
+  }
+}
+.service__inner {
+  position: relative;
+  padding: 60px 50px;
+  border-radius: 27px;
+  background-color: #282c30;
+}
+@media (max-width: 46.25em) {
+  .service__inner {
+    padding: 55px 50px;
+  }
+}
+.service__line {
+  position: absolute;
+  top: 91px;
+  width: 195px;
+  border: 1px dashed #858b93;
+}
+.service__line:nth-child(2) {
+  left: 260px;
+}
+@media (max-width: 46.25em) {
+  .service__line:nth-child(2) {
+    top: 270px;
+    left: 62px;
+  }
+}
+.service__line:nth-child(3) {
+  right: 260px;
+}
+@media (max-width: 46.25em) {
+  .service__line:nth-child(3) {
+    top: initial;
+    bottom: 270px;
+    right: 62px;
+  }
+}
+
+.service-list {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 46.25em) {
+  .service-list {
+    flex-direction: column;
+    row-gap: 56px;
+  }
+}
+.service-list__item {
+  width: 262px;
+  text-align: center;
+}
+.service-list__item:nth-child(2) .service-list__img-wrap {
+  background-color: #ef8f00;
+}
+.service-list__item:nth-child(3) .service-list__img-wrap {
+  background-color: #ae8ff9;
+}
+@media (max-width: 46.25em) {
+  .service-list__item {
+    width: 100%;
+  }
+}
+.service-list__img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: #0cce84;
+}
+.service-list__heading {
+  margin-top: 30px;
+  color: #f9f9f9;
+  font-weight: 600;
+  font-size: 2.2rem;
+}
+@media (max-width: 46.25em) {
+  .service-list__heading {
+    font-size: 2rem;
+  }
+}
+.service-list__desc {
+  margin-top: 5px;
+  color: #858b93;
+  font-weight: 400;
+  line-height: 1.625;
+}
+@media (max-width: 46.25em) {
+  .service-list__desc {
+    margin-top: 10px;
+    line-height: 1.25;
+  }
 }/*# sourceMappingURL=style.css.map */
