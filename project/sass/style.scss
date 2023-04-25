@@ -127,8 +127,8 @@ button {
 .gradient-text {
     // Color
     background: linear-gradient(to right, #eb9204 -34%, #83e868 116%);
-    background-clip: text;
-    -webkit-background-clip: text;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent;
     // Text
     font: inherit;
@@ -807,6 +807,10 @@ button {
 .task {
     // Box Model
     margin-top: 140px;
+    // Mixins
+    @include mobile {
+        margin-top: 80px;
+    }
     // Classes
     .container {
         // Mixins
@@ -816,11 +820,25 @@ button {
         }
     }
     &__inner {
+        // Flexbox Model
         display: flex;
         justify-content: space-between;
         align-items: center;
+        // Mixins
+        @include mobile {
+            flex-direction: column;
+            row-gap: 80px;
+            align-items: flex-start;
+        }
     }
     // Task Content
+    &__content {
+        // Mixins
+        @include mobile {
+            // Box Model
+            width: 100%;
+        }
+    }
     &__heading {
         // Box Model
         width: 368px;
@@ -830,6 +848,14 @@ button {
         font-weight: 600;
         font-size: 4rem;
         line-height: 1.25;
+        // Mixins
+        @include mobile {
+            // Box Model
+            width: 219px;
+            // Text
+            font-size: 3rem;
+            line-height: 1.27;
+        }
     }
     &__desc {
         // Box Model
@@ -840,6 +866,15 @@ button {
         // Text
         font-weight: 400;
         line-height: 1.625;
+        // Mixins
+        @include mobile {
+            // Box Model
+            width: 290px;
+            margin-top: 10px;
+            // Text
+            font-size: 1.2rem;
+            line-height: 1.83;
+        }
     }
     &__countdown {
         // Positioning
@@ -849,6 +884,13 @@ button {
         column-gap: 17px;
         // Box Model
         margin-top: 86px;
+        // Mixins
+        @include mobile {
+            // Box Model
+            width: 100%;
+            height: 140px;
+            margin-top: 38px;
+        }
         // Classes
         &-dots {
             // Positioning
@@ -860,6 +902,11 @@ button {
             column-gap: 5px;
             // Transform
             transform: translateX(-50%);
+            // Mixins
+            @include mobile {
+                // Display
+                display: none;
+            }
         }
         &-dot {
             // Box Model
@@ -886,6 +933,30 @@ button {
             border-radius: 9px;
             // Color
             background-color: #272633;
+            // Mixins
+            @include mobile {
+                // Positioning
+                position: absolute;
+                // Box Model
+                width: 104px;
+                height: 98px;
+                // Classes
+                &:nth-child(2) {
+                    // Positioning
+                    top: 0;
+                    left: 23px;
+                }
+                &:nth-child(3) {
+                    // Positioning
+                    left: 118px;
+                    z-index: 1;
+                }
+                &:nth-child(4) {
+                    // Positioning
+                    top: 0;
+                    right: 23px;
+                }
+            }
             // Classes
             &-title {
                 // Box Model
@@ -895,6 +966,13 @@ button {
                 // Text
                 font-weight: 600;
                 font-size: 3rem;
+                // Mixins
+                @include mobile {
+                    // Box Model
+                    margin-top: 15px;
+                    // Text
+                    font-size: 2rem;
+                }
             }
             &-desc {
                 // Box Model
@@ -904,6 +982,15 @@ button {
                 // Text
                 font-weight: 400;
                 line-height: 1.625;
+                // Mixins
+                @include mobile {
+                    // Box Model
+                    margin-top: 10px;
+                    // Text
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                    line-height: 1.25;
+                }
             }
             &--active {
                 // Color
@@ -916,6 +1003,14 @@ button {
                 );
                 // Transform
                 transform: translateY(34px);
+                // Mixins
+                @include mobile {
+                    // Box Model
+                    width: 86px;
+                    height: 83px;
+                    // Transform
+                    transform: translateY(56px);
+                }
                 // Classes
                 .task__countdown-item-desc {
                     // Box Model
@@ -931,11 +1026,249 @@ button {
     }
     // Task Media
     &__media {
+        // Positioning
+        position: relative;
+        // Mixins
+        @include mobile {
+            // Box Model
+            width: 100%;
+        }
         // Classes
         &-img {
             // Box Model
             width: 100%;
             height: 525px;
+            // Mixins
+            @include mobile {
+                // Box Model
+                width: 296px;
+                height: auto;
+                margin-left: 23px;
+            }
+        }
+    }
+    &-media-block {
+        // Positioning
+        position: absolute;
+        // Flexbox Model
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // Box Model
+        border-radius: 5px;
+        // Color
+        background-color: #27292c;
+        // Classes
+        &__title {
+            // Text
+            font-weight: 600;
+            font-size: 1.4rem;
+            // Mixins
+            @include mobile {
+                // Text
+                font-size: 0.7rem;
+            }
+        }
+        &__icon-wrap {
+            // Flexbox Model
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // Box Model
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            // Color
+            background-color: #363a3e;
+            // Mixins
+            @include mobile {
+                // Box Model
+                width: 17px;
+                height: 17px;
+            }
+        }
+        &:nth-of-type(1) {
+            // Positioning
+            top: 62px;
+            right: 342px;
+            // Box Model
+            width: 225px;
+            height: 62px;
+            padding: 0 18px;
+            // Mixins
+            @include mobile {
+                // Positioning
+                top: 32px;
+                right: 180px;
+                // Box Model
+                width: 120px;
+                height: 32px;
+                padding: 0 10px;
+                // Classes
+                .task-media-block__icon {
+                    // Box Model
+                    width: 5px;
+                }
+            }
+            // Classes
+            .task-media-block__title {
+                // Color
+                background: linear-gradient(
+                    89.86deg,
+                    #ef8f00 -6.27%,
+                    #ff7667 90.08%
+                );
+            }
+        }
+        &:nth-of-type(2) {
+            // Positioning
+            top: 55px;
+            right: 44px;
+            // Box Model
+            width: 200px;
+            height: 55px;
+            padding: 0 18px;
+            // Mixins
+            @include mobile {
+                // Positioning
+                top: 28px;
+                right: 22px;
+                // Box Model
+                width: 105px;
+                height: 30px;
+                padding: 0 10px;
+                // Classes
+                .task-media-block__icon {
+                    // Box Model
+                    width: 7px;
+                }
+            }
+            // Classes
+            .task-media-block__title {
+                // Color
+                background: linear-gradient(
+                    89.93deg,
+                    #0cce84 3.45%,
+                    #ae8ef9 99.07%
+                );
+            }
+        }
+        &:nth-of-type(3) {
+            // Positioning
+            top: 318px;
+            right: 375px;
+            // Box Model
+            width: 228px;
+            height: 53px;
+            padding: 0 18px;
+            // Mixins
+            @include mobile {
+                // Positioning
+                top: 168px;
+                right: 198px;
+                // Box Model
+                width: 120px;
+                height: 28px;
+                padding: 0 10px;
+                // Classes
+                .task-media-block__icon {
+                    // Box Model
+                    width: 5px;
+                }
+            }
+            // Classes
+            .task-media-block__content-wrap {
+                // Flexbox Model
+                display: flex;
+                column-gap: 15px;
+                align-items: center;
+                // Mixins
+                @include mobile {
+                    // Flexbox Model
+                    column-gap: 8px;
+                }
+            }
+            .task-media-block__title {
+                // Color
+                background: linear-gradient(
+                    92.64deg,
+                    #c4f566 -11.2%,
+                    #ff6e6e 123.12%
+                );
+            }
+            .task-media-block__avatar {
+                // Box Model
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                border: 1px solid transparent;
+                // Resize
+                object-fit: cover;
+                // Color
+                background: linear-gradient(to right, #c531f9, #dd406f, #787878)
+                    border-box;
+                // Mixins
+                @include mobile {
+                    // Box Model
+                    width: 17px;
+                    height: 17px;
+                }
+                // Classes
+                &:last-child {
+                    // Box Model
+                    margin-left: -11px;
+                    // Color
+                    background: linear-gradient(
+                            to right,
+                            #6aea5c,
+                            #db7d60,
+                            #787878
+                        )
+                        border-box;
+                    // Mixins
+                    @include mobile {
+                        // Box Model
+                        margin-left: -6px;
+                    }
+                }
+                &-list {
+                    // Flexbox Model
+                    display: flex;
+                }
+            }
+        }
+        &:nth-of-type(4) {
+            // Positioning
+            top: 392px;
+            right: 28px;
+            // Box Model
+            width: 198px;
+            height: 53px;
+            padding: 0 18px 0 30px;
+            // Mixins
+            @include mobile {
+                // Positioning
+                top: 206px;
+                right: 15px;
+                // Box Model
+                width: 105px;
+                height: 28px;
+                padding: 0 10px;
+                // Classes
+                .task-media-block__icon {
+                    // Box Model
+                    width: 10px;
+                }
+            }
+            // Classes
+            .task-media-block__title {
+                // Color
+                background: linear-gradient(
+                    92.64deg,
+                    #c4f566 -11.2%,
+                    #ff6e6e 123.12%
+                );
+            }
         }
     }
 }
