@@ -124,6 +124,15 @@ button {
         }
     }
 }
+.gradient-text {
+    // Color
+    background: linear-gradient(to right, #eb9204 -34%, #83e868 116%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    // Text
+    font: inherit;
+}
 // **************************
 
 // +++++ HEADER +++++
@@ -290,11 +299,6 @@ button {
             position: relative;
             // Display
             display: inline-block;
-            // Color
-            background: linear-gradient(to right, #eb9204 -34%, #83e868 116%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             // Classes
             &::after {
                 // Positioning
@@ -798,4 +802,142 @@ button {
     }
 }
 // ===== ======= =====
+
+// ===== Task =====
+.task {
+    // Box Model
+    margin-top: 140px;
+    // Classes
+    .container {
+        // Mixins
+        @include container(1162px);
+        @include mobile {
+            @include container(319px);
+        }
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    // Task Content
+    &__heading {
+        // Box Model
+        width: 368px;
+        // Color
+        color: #f9f9f9;
+        // Text
+        font-weight: 600;
+        font-size: 4rem;
+        line-height: 1.25;
+    }
+    &__desc {
+        // Box Model
+        width: 538px;
+        margin-top: 22px;
+        // Color
+        color: #858b93;
+        // Text
+        font-weight: 400;
+        line-height: 1.625;
+    }
+    &__countdown {
+        // Positioning
+        position: relative;
+        // Flexbox Model
+        display: inline-flex;
+        column-gap: 17px;
+        // Box Model
+        margin-top: 86px;
+        // Classes
+        &-dots {
+            // Positioning
+            position: absolute;
+            top: 0;
+            left: 50%;
+            // Flexbox Model
+            display: flex;
+            column-gap: 5px;
+            // Transform
+            transform: translateX(-50%);
+        }
+        &-dot {
+            // Box Model
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            // Color
+            background-color: #f9f9f9;
+            opacity: 0.3;
+            // Classes
+            &--active {
+                background-color: #ef8f00;
+                opacity: 1;
+            }
+        }
+        &-item {
+            // Flexbox Model
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // Box Model
+            width: 132px;
+            height: 127px;
+            border-radius: 9px;
+            // Color
+            background-color: #272633;
+            // Classes
+            &-title {
+                // Box Model
+                margin-top: 20px;
+                // Color
+                color: #f9f9f9;
+                // Text
+                font-weight: 600;
+                font-size: 3rem;
+            }
+            &-desc {
+                // Box Model
+                margin-top: 16px;
+                // Color
+                color: #858b93;
+                // Text
+                font-weight: 400;
+                line-height: 1.625;
+            }
+            &--active {
+                // Color
+                background: linear-gradient(
+                    191.94deg,
+                    #c4f566 -43.72%,
+                    #ae8ef9 -5.87%,
+                    #ef8f00 52.36%,
+                    #61e559 122.78%
+                );
+                // Transform
+                transform: translateY(34px);
+                // Classes
+                .task__countdown-item-desc {
+                    // Box Model
+                    width: 62px;
+                    margin-top: 6px;
+                    // Color
+                    color: #f9f9f9;
+                    // Text
+                    text-align: center;
+                }
+            }
+        }
+    }
+    // Task Media
+    &__media {
+        // Classes
+        &-img {
+            // Box Model
+            width: 100%;
+            height: 525px;
+        }
+    }
+}
+// ===== ==== =====
 // ++++++++++++++++
