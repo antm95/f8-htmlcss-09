@@ -54,6 +54,9 @@ button {
     /* Text */
     font: inherit;
 }
+img {
+    pointer-events: none;
+}
 // *********************
 
 // ***** COMMON CLASSES *****
@@ -122,6 +125,45 @@ button {
         &:hover {
             background-position: 100% 0;
         }
+    }
+}
+.section-heading {
+    // Color
+    color: #f9f9f9;
+    // Text
+    font-weight: 600;
+    font-size: 4rem;
+    line-height: 1.25;
+    // Mixins
+    @include mobile {
+        // Text
+        font-size: 3rem;
+        line-height: 1.33;
+    }
+    // Classes
+    &--center {
+        // Text
+        text-align: center;
+    }
+}
+.section-desc {
+    // Color
+    color: #858b93;
+    // Text
+    font-weight: 400;
+    line-height: 1.625;
+    // Mixins
+    @include mobile {
+        // Color
+        color: #9ea1a7;
+        // Text
+        font-size: 1.2rem;
+        line-height: 1.83;
+    }
+    // Classes
+    &--center {
+        // Text
+        text-align: center;
     }
 }
 .gradient-text {
@@ -419,12 +461,6 @@ button {
         // Box Model
         width: 446px;
         margin: 38px auto 0;
-        // Text
-        font-weight: 400;
-        line-height: 1.625;
-        text-align: center;
-        // Color
-        color: #858b93;
         // -Mixins
         @include mobile {
             // Display
@@ -842,38 +878,21 @@ button {
     &__heading {
         // Box Model
         width: 368px;
-        // Color
-        color: #f9f9f9;
-        // Text
-        font-weight: 600;
-        font-size: 4rem;
-        line-height: 1.25;
         // Mixins
         @include mobile {
             // Box Model
             width: 219px;
-            // Text
-            font-size: 3rem;
-            line-height: 1.27;
         }
     }
     &__desc {
         // Box Model
         width: 538px;
         margin-top: 22px;
-        // Color
-        color: #858b93;
-        // Text
-        font-weight: 400;
-        line-height: 1.625;
         // Mixins
         @include mobile {
             // Box Model
             width: 290px;
             margin-top: 10px;
-            // Text
-            font-size: 1.2rem;
-            line-height: 1.83;
         }
     }
     &__countdown {
@@ -1599,19 +1618,10 @@ button {
     &__heading {
         // Box Model
         width: 400px;
-        // Color
-        color: #f9f9f9;
-        // Text
-        font-weight: 600;
-        font-size: 4rem;
-        line-height: 1.25;
         // Mixins
         @include mobile {
             // Box Model
             width: 235px;
-            // Text
-            font-size: 3rem;
-            line-height: 1.27;
         }
     }
     &__check-list {
@@ -1714,4 +1724,112 @@ button {
     }
 }
 // ===== ======== =====
+
+// ===== About =====
+.about {
+    // Box Model
+    margin-top: 140px;
+    // Mixins
+    @include mobile {
+        margin-top: 80px;
+    }
+    // Classes
+    .container {
+        // Mixins
+        @include container(1096px);
+        @include mobile {
+            @include container(319px);
+        }
+    }
+    &__inner {
+        // Flexbox Model
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    // About Heading & Desc
+    &__heading {
+        // Box Model
+        width: 498px;
+        // Mixins
+        @include mobile {
+            // Box Model
+            width: 228px;
+        }
+        // Classes
+        &-gradient-text {
+            // Mixins
+            @include mobile {
+                // Color
+                background: linear-gradient(
+                    to right,
+                    #d1df2d -34%,
+                    #ff6f06 116%
+                );
+            }
+        }
+    }
+    &__desc {
+        // Box Model
+        width: 748px;
+        margin-top: 30px;
+        // Mixins
+        @include mobile {
+            // Box Model
+            width: 268px;
+            margin-top: 20px;
+        }
+    }
+    // About Action
+    &__action-list {
+        // Flexbox Model
+        display: flex;
+        column-gap: 18px;
+        align-items: center;
+        // Box Model
+        margin-top: 44px;
+        // Mixins
+        @include mobile {
+            // Flexbox Model
+            flex-direction: column;
+            row-gap: 26px;
+        }
+    }
+    &__action-item {
+        // Box Model
+        width: 170px;
+        height: 46px;
+        padding: 0 18px;
+        border-radius: 23px;
+        // Flexbox Model
+        display: flex;
+        column-gap: 18px;
+        align-items: center;
+        // Color
+        background-color: #282c30;
+    }
+    &__action-name {
+        // Color
+        color: #858b93;
+        // Text
+        font-weight: 400;
+        font-size: 1.4rem;
+        // Mixins
+        @include mobile {
+            // Color
+            color: #a4b3be;
+        }
+    }
+    // About Media Image
+    &__media {
+        // Box Model
+        width: 100%;
+        margin-top: 75px;
+        // Mixins
+        @include mobile {
+            margin-top: 32px;
+        }
+    }
+}
+// ===== ===== =====
 // ++++++++++++++++
