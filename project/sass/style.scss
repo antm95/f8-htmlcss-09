@@ -90,9 +90,9 @@ img {
         color: #f9f9f9;
         background-color: #eb9204;
         background: linear-gradient(90deg, #eb9204 -33.14%, #83e868 116.38%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        background-clip: text !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
         border-color: #272633;
         // Classes
         &:hover {
@@ -883,6 +883,18 @@ img {
             // Box Model
             width: 219px;
         }
+        // Classes
+        &-gradient-text {
+            // Mixins
+            @include mobile {
+                // Color
+                background: linear-gradient(
+                    to right,
+                    #c3cf36 -34%,
+                    #e0a412 116%
+                );
+            }
+        }
     }
     &__desc {
         // Box Model
@@ -1624,6 +1636,13 @@ img {
             width: 235px;
         }
     }
+    &__gradient-text {
+        // Mixins
+        @include mobile {
+            // Color
+            background: linear-gradient(to right, #aeef51 -34%, #ef8f00 116%);
+        }
+    }
     &__check-list {
         // Grid Layout Model
         display: grid;
@@ -1862,6 +1881,18 @@ img {
         @include mobile {
             width: 100%;
         }
+        // Classes
+        &-gradient-text {
+            // Mixins
+            @include mobile {
+                // Color
+                background: linear-gradient(
+                    to right,
+                    #d8dc2b -34%,
+                    #ff5c00f2 116%
+                );
+            }
+        }
     }
     // Support Button
     &__btn {
@@ -1878,6 +1909,8 @@ img {
             // Positioning
             top: 1056px;
             right: 92px;
+            // Color
+            background: linear-gradient(to right, #d8dc2b -34%, #ff5c00f2 116%);
             // Text
             font-size: 1.2rem;
             // Mixins

@@ -54,9 +54,9 @@ img {
   color: #f9f9f9;
   background-color: #eb9204;
   background: linear-gradient(90deg, #eb9204 -33.14%, #83e868 116.38%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
   border-color: #272633;
 }
 .btn--border-theme:hover {
@@ -682,6 +682,11 @@ img {
     width: 219px;
   }
 }
+@media (max-width: 46.25em) {
+  .task__heading-gradient-text {
+    background: linear-gradient(to right, #c3cf36 -34%, #e0a412 116%);
+  }
+}
 .task__desc {
   width: 538px;
   margin-top: 22px;
@@ -1246,6 +1251,11 @@ img {
     width: 235px;
   }
 }
+@media (max-width: 46.25em) {
+  .features-content__gradient-text {
+    background: linear-gradient(to right, #aeef51 -34%, #ef8f00 116%);
+  }
+}
 .features-content__check-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1440,6 +1450,11 @@ img {
     width: 100%;
   }
 }
+@media (max-width: 46.25em) {
+  .support__heading-gradient-text {
+    background: linear-gradient(to right, #d8dc2b -34%, rgba(255, 92, 0, 0.9490196078) 116%);
+  }
+}
 .support__btn {
   position: absolute;
   top: 28px;
@@ -1454,6 +1469,7 @@ img {
   .support__btn {
     top: 1056px;
     right: 92px;
+    background: linear-gradient(to right, #d8dc2b -34%, rgba(255, 92, 0, 0.9490196078) 116%);
     font-size: 1.2rem;
     min-width: 136px;
     height: 42px;
