@@ -1803,7 +1803,7 @@ img {
         border-radius: 23px;
         // Flexbox Model
         display: flex;
-        column-gap: 18px;
+        justify-content: space-between;
         align-items: center;
         // Color
         background-color: #282c30;
@@ -1832,4 +1832,282 @@ img {
     }
 }
 // ===== ===== =====
+
+// ===== Support =====
+.support {
+    // Box Model
+    min-height: 860px;
+    margin-top: 140px;
+    // Mixins
+    @include mobile {
+        margin-top: 46px;
+    }
+    // Classes
+    .container {
+        // Mixins
+        @include container(1096px);
+        @include mobile {
+            @include container(319px);
+        }
+    }
+    &__inner {
+        // Positioning
+        position: relative;
+    }
+    // Support Heading
+    &__heading {
+        // Box Model
+        width: 494px;
+        // Mixins
+        @include mobile {
+            width: 100%;
+        }
+    }
+    // Support Button
+    &__btn {
+        // Positioning
+        position: absolute;
+        top: 28px;
+        right: 98px;
+        // Text
+        font-weight: 600;
+        font-size: 1.8rem;
+        // Mixins
+        @include resizeBtn(218px, 68px, 12px);
+        @include mobile {
+            // Positioning
+            top: 1056px;
+            right: 92px;
+            // Text
+            font-size: 1.2rem;
+            // Mixins
+            @include resizeBtn(136px, 42px, 10px);
+        }
+    }
+    // Support Wrapper
+    &__wrap {
+        // Grid Layout Model
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        // Box Model
+        margin-top: 24px;
+        // Mixins
+        @include mobile {
+            // Grid Layout Model
+            grid-template-columns: 1fr;
+            row-gap: 70px;
+            // Box Model
+            margin-top: 30px;
+        }
+    }
+    // Support Card List
+    &__card-list {
+        // Flexbox Model
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        // Mixins
+        @include mobile {
+            row-gap: 10px;
+        }
+    }
+    &__card-item {
+        // Positioning
+        position: relative;
+        // Box Model
+        width: 494px;
+        height: 158px;
+        padding: 30px 40px;
+        border: 2px solid #282c30;
+        border-radius: 15px;
+        // Animator
+        transition: 0.3s;
+        // Mixins
+        @include mobile {
+            // Box Model
+            width: 319px;
+            height: 102px;
+            padding: 18px 25px 0;
+        }
+        // Classes
+        &:nth-child(2) {
+            // Classes
+            .support__card-name::after {
+                // Color
+                background-color: #0cce84;
+            }
+        }
+        &:nth-child(3) {
+            // Classes
+            .support__card-name::after {
+                // Color
+                background-color: #ff7667;
+            }
+        }
+        &:hover {
+            // Color
+            background-color: #282c30;
+            // Classes
+            &::before {
+                // Positioning
+                position: absolute;
+                top: 120px;
+                left: 44px;
+                // Box Model
+                content: "";
+                display: inline-block;
+                width: 425px;
+                height: 60px;
+                border-radius: 19px;
+                // Color
+                background: #0d0d0d;
+                filter: blur(50px);
+                // Mixins
+                @include mobile {
+                    // Display
+                    display: none;
+                }
+            }
+        }
+    }
+    &__card-name {
+        // Positioning
+        position: relative;
+        // Display
+        display: inline-block;
+        // Color
+        color: #f9f9f9;
+        // Text
+        font-weight: 600;
+        font-size: 2.8rem;
+        // Mixins
+        @include mobile {
+            // Text
+            font-size: 1.8rem;
+        }
+        // Classes
+        &::after {
+            // Positioning
+            position: absolute;
+            bottom: 7px;
+            right: -14px;
+            // Box Model
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            // Color
+            background-color: #ef8f00;
+            // Mixins
+            @include mobile {
+                // Positioning
+                bottom: 5px;
+                right: -10px;
+                // Box Model
+                width: 5px;
+                height: 5px;
+            }
+        }
+    }
+    &__card-desc {
+        // Box Model
+        width: 388px;
+        margin-top: 10px;
+        // Color
+        color: #858b93;
+        // Text
+        font-weight: 400;
+        line-height: 1.5;
+        // Mixins
+        @include mobile {
+            // Box Model
+            width: 244px;
+            // Text
+            font-size: 1rem;
+            line-height: 2.2;
+        }
+    }
+    // Support Media
+    &__media {
+        // Positioning
+        position: relative;
+        // Box Model
+        height: 615px;
+        // Mixins
+        @include mobile {
+            height: 448px;
+        }
+        // Classes
+        &-img {
+            // Positioning
+            position: absolute;
+            top: 0;
+            left: 0;
+            // Box Model
+            display: block;
+            width: 348px;
+            height: 264px;
+            border-radius: 30px;
+            border: 3px solid transparent;
+            // Color
+            background: linear-gradient(to right, #a7ef4c, #ff5435, #ef8f00)
+                border-box;
+            box-shadow: 0px 4px 89px 27px rgba(0, 0, 0, 0.4);
+            // Resize
+            object-fit: cover;
+            // Mixins
+            @include mobile {
+                // Box Model
+                width: 100%;
+                height: 210px;
+            }
+            // Classes
+            &:nth-child(2) {
+                // Positioning
+                top: 160px;
+                left: 200px;
+                // Color
+                background: linear-gradient(to right, #6aea5c, #fd7566, #ef8f00)
+                    border-box;
+                // Mixins
+                @include mobile {
+                    // Display
+                    display: none;
+                }
+            }
+            &:nth-child(3) {
+                // Positioning
+                top: 351px;
+                left: 25px;
+                // Color
+                background: linear-gradient(to right, #b2eb22, #f95e37, #f28a14)
+                    border-box;
+                // Mixins
+                @include mobile {
+                    // Positioning
+                    top: 238px;
+                    left: 0;
+                }
+            }
+        }
+    }
+    // Support Line
+    &__line {
+        // Box Model
+        width: 1000px;
+        height: 1px;
+        margin: 70px auto 0;
+        // Color
+        background-color: #282c30;
+        // Mixins
+        @include mobile {
+            // Box Model
+            width: 265px;
+            margin-top: 150px;
+        }
+    }
+}
+// ===== ======= =====
 // ++++++++++++++++
