@@ -2375,7 +2375,6 @@ button {
     // Classes
     .container {
         // Mixins
-        @include container(1220px);
         @include mobile {
             @include container(319px);
         }
@@ -2644,7 +2643,312 @@ button {
             // Color
             color: #ef8f00;
         }
+        &-icon {
+            // Mixins
+            @include mobile {
+                // Box Model
+                height: 10px;
+            }
+        }
     }
 }
 // ===== ============ =====
 // ++++++++++++++++
+
+// +++++ FOOTER +++++
+.ftr {
+    // Box Model
+    padding: 68px 0 148px;
+    margin-top: 165px;
+    // Color
+    background-color: #0d1012;
+    // Mixins
+    @include mobile {
+        // Box Model
+        padding: 40px 0;
+        margin-top: 78px;
+    }
+    // Classes
+    .container {
+        // Mixins
+        @include container(1096px);
+        @include mobile {
+            @include container(319px);
+        }
+    }
+    &__row {
+        // Flexbox Model
+        display: flex;
+        // Classes
+        &:first-child {
+            // Flexbox Model
+            align-items: center;
+            // Mixins
+            @include mobile {
+                justify-content: center;
+            }
+        }
+        &:last-child {
+            // Box Model
+            margin-top: 70px;
+            // Mixins
+            @include mobile {
+                margin-top: 64px;
+            }
+        }
+    }
+    // Footer Logo
+    &__logo {
+        // Box Model
+        height: 30px;
+        // Mixins
+        @include mobile {
+            // Display
+            display: none;
+        }
+    }
+    // Footer CTA
+    &__cta-wrap {
+        // Flexbox Model
+        display: flex;
+        align-items: center;
+        column-gap: 54px;
+        // Box Model
+        margin-left: 400px;
+        // Mixins
+        @include mobile {
+            // Flexbox Model
+            flex-direction: column;
+            row-gap: 26px;
+            // Box Model
+            margin: 0;
+        }
+    }
+    &__cta-title {
+        // Color
+        color: #858b93;
+        // Text
+        font-weight: 600;
+        font-size: 2.2rem;
+        // Mixins
+        @include mobile {
+            // Color
+            color: #495468;
+        }
+    }
+    &__cta-btn {
+        // Mixins
+        @include resizeBtn(165px, 55px, 10px);
+        @include mobile {
+            // Color
+            color: #fff;
+            // Text
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+    }
+    // Footer Line
+    &__line {
+        // Box Model
+        border: 1px solid;
+        margin-top: 38px;
+        // Color
+        border-color: #272633;
+        // Mixins
+        @include mobile {
+            // Display
+            display: none;
+        }
+    }
+    // Footer Column
+    &__col {
+        // Classes
+        &:first-child {
+            // Flexbox Model
+            display: flex;
+            flex-direction: column;
+            // Mixins
+            @include mobile {
+                // Box Model
+                width: 100%;
+                // Flexbox Model
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        &:nth-child(2) {
+            // Box Model
+            margin-left: 154px;
+        }
+        &:nth-child(3) {
+            // Box Model
+            margin-left: 55px;
+        }
+        &:nth-child(4) {
+            // Box Model
+            margin-left: 87px;
+        }
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+            // Mixins
+            @include mobile {
+                // Display
+                display: none;
+            }
+        }
+    }
+    // Footer Subscribe
+    &__logo-mobile {
+        // Display
+        display: none;
+        // Box Model
+        height: 10px;
+        // Mixins
+        @include mobile {
+            // Display
+            display: block;
+        }
+    }
+    // Footer Subscribe
+    &__sub {
+        // Color
+        color: #f9f9f9;
+        // Text
+        font-weight: 600;
+        font-size: 2.2rem;
+        // Mixins
+        @include mobile {
+            // Display
+            display: none;
+        }
+    }
+    .sub-form {
+        // Box Model
+        margin-top: 44px;
+        // Mixins
+        @include mobile {
+            margin: 0;
+        }
+        // Classes
+        &__wrap {
+            // Flexbox Model
+            display: flex;
+            // Box Model
+            width: 308px;
+            height: 50px;
+            padding: 6px;
+            border: 1px solid;
+            border-radius: 26px;
+            // Color
+            border-color: #272633;
+            // Mixins
+            @include mobile {
+                // Box Model
+                width: 172px;
+                height: 28px;
+                padding: 4px;
+            }
+        }
+        &__input {
+            /* Box Model */
+            width: 100%;
+            height: 100%;
+            padding: 0 19px;
+            border-radius: inherit;
+            border: none;
+            outline: none;
+            /* Color */
+            color: #f9f9f9;
+            background-color: transparent;
+            /* Text */
+            font-weight: 300;
+            font-size: 1.2rem;
+            line-height: 1.17;
+            // Mixins
+            @include mobile {
+                // Box Model
+                padding: 0 8px;
+                // Text
+                font-weight: 500;
+                font-size: 1.2rem;
+                line-height: 1.83;
+            }
+            // Classes
+            &::placeholder {
+                // Color
+                color: #858b93;
+            }
+        }
+        &__btn {
+            // Mixins
+            @include resizeBtn(38px, 38px, 50%);
+            @include mobile {
+                @include resizeBtn(20px, 20px, 50%);
+                // Classes
+                &-icon {
+                    // Box Model
+                    height: 6px;
+                }
+            }
+        }
+    }
+    // Footer Socials
+    &__socials-list {
+        // Flexbox Model
+        display: flex;
+        column-gap: 16px;
+        // Box Model
+        margin-top: 45px;
+        // Mixins
+        @include mobile {
+            // Display
+            display: none;
+        }
+    }
+    &__socials-item {
+        // Mixins
+        @include resizeBtn(38px, 38px, 50%);
+    }
+    // Footer Navigation
+    &__heading {
+        // Color
+        color: #f9f9f9;
+        // Text
+        font-weight: 600;
+        font-size: 2.2rem;
+    }
+    &__list {
+        // Box Model
+        margin-top: 22px;
+    }
+    &__link {
+        // Box Model
+        padding-bottom: 20px;
+        // Color
+        color: #858b93;
+        opacity: 0.6;
+        // Text
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 2.11;
+        // Classes
+        &:hover {
+            // Text
+            text-decoration: underline;
+            text-underline-offset: 10px;
+        }
+    }
+    // Footer Menu Mobile
+    &__menu-mobile {
+        // Display
+        display: none;
+        // Mixins
+        @include mobile {
+            // Display
+            display: block;
+        }
+    }
+}
+// ++++++++++++++++++
