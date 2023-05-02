@@ -2363,4 +2363,288 @@ button {
     }
 }
 // ===== ==== =====
+
+// ===== Testimonials =====
+.testimonials {
+    // Box Model
+    margin-top: 140px;
+    // Mixins
+    @include mobile {
+        margin-top: 80px;
+    }
+    // Classes
+    .container {
+        // Mixins
+        @include container(1220px);
+        @include mobile {
+            @include container(319px);
+        }
+    }
+    &__inner {
+        // Positioning
+        position: relative;
+        // Box Model
+        min-height: 372px;
+    }
+    &__heading {
+        // Display
+        display: none;
+        // Mixins
+        @include mobile {
+            // Display
+            display: flex;
+            justify-content: center;
+            column-gap: 2px;
+        }
+        // Classes
+        &-gradient-text {
+            // Color
+            background: linear-gradient(to right, #f8d100, #f8d100);
+        }
+    }
+    &__wrap {
+        // Display
+        overflow: hidden;
+        // Mixins
+        @include mobile {
+            // Box Model
+            margin-top: 55px;
+        }
+    }
+    // Testimonials List
+    &__list {
+        // Flexbox Model
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    // Testimonials Item
+    &__item {
+        // Flexbox Model
+        flex-shrink: 0;
+        // Box Model
+        width: 385px;
+        height: 308px;
+        padding: 30px 40px 26px;
+        border: 1px solid;
+        border-radius: 10px;
+        // Color
+        border-color: #282c30;
+        // Animation
+        transition: 0.3s;
+        // Mixins
+        @include mobile {
+            // Box Model
+            width: 100%;
+            height: 255px;
+            padding: 24px 20px 20px;
+            // Color
+            background-color: #282b2e;
+        }
+    }
+    &__item ~ &__item {
+        // Box Model
+        margin-left: 32px;
+    }
+    // Testimonials Quotes + Icon
+    &__quotes-icon {
+        // Box Model
+        margin-left: 216px;
+        // Color
+        color: #282c30;
+        // Animation
+        transition: 0.3s;
+        // Mixins
+        @include mobile {
+            // Box Model
+            height: 26px;
+            margin-left: 192px;
+            // Color
+            color: #494d52;
+        }
+    }
+    &__quotes {
+        // Box Model
+        margin-top: 26px;
+        // Color
+        color: #858b93;
+        opacity: 0.8;
+        // Text
+        font-weight: 400;
+        line-height: 1.625;
+        // Animation
+        transition: 0.3s;
+        // Mixins
+        @include mobile {
+            // Box Model
+            margin-top: 20px;
+            // Text
+            font-size: 1.5rem;
+            line-height: 1.87;
+            // Color
+            color: #b1b1b1;
+        }
+    }
+    // Testimonials Info
+    &__info {
+        // Flexbox Model
+        display: flex;
+        align-items: center;
+        // Box Model
+        margin-top: 22px;
+        // Mixins
+        @include mobile {
+            // Box Model
+            margin-top: 10px;
+        }
+        // Classes
+        &-wrap {
+            // Flexbox Model
+            display: flex;
+            flex-direction: column;
+            // Box Model
+            margin-left: 20px;
+            // Mixins
+            @include mobile {
+                // Box Model
+                margin-left: 16px;
+            }
+        }
+    }
+    &__avatar {
+        // Box Model
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        // Resize
+        object-fit: cover;
+        // Mixins
+        @include mobile {
+            // Box Model
+            width: 30px;
+            height: 30px;
+        }
+    }
+    &__name {
+        // Color
+        color: #f9f9f9;
+        // Text
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 1.56;
+        // Mixins
+        @include mobile {
+            // Text
+            font-size: 1.4rem;
+            line-height: 2;
+        }
+    }
+    &__job {
+        // Color
+        color: #858b93;
+        // Text
+        font-weight: 400;
+        line-height: 1.5;
+        // Mixins
+        @include mobile {
+            // Text
+            font-size: 1rem;
+            line-height: 2;
+        }
+    }
+    &__rating {
+        // Flexbox Model
+        display: flex;
+        column-gap: 5px;
+        // Box Model
+        margin-left: 52px;
+        // Mixins
+        @include mobile {
+            // Box Model
+            margin-left: 40px;
+        }
+    }
+    // Testimonials Item Hover
+    &__item:hover {
+        // Color
+        background-color: #282c30;
+        // Classes
+        .testimonials__quotes-icon {
+            // Color
+            color: #0cce84;
+            // Transform
+            rotate: 180deg;
+        }
+        .testimonials__quotes {
+            // Color
+            color: #bcc6d0;
+        }
+    }
+    // Testimonials Dots
+    &__dots {
+        // Flexbox Model
+        display: none;
+        justify-content: center;
+        column-gap: 5px;
+        // Box Model
+        margin: 20px auto 0;
+        // Mixins
+        @include mobile {
+            // Display
+            display: flex;
+        }
+    }
+    &__dot {
+        // Box Model
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        // Color
+        background-color: #f9f9f9;
+        opacity: 0.3;
+        // Classes
+        &--active {
+            // Color
+            background-color: #ef8f00;
+            opacity: 1;
+        }
+    }
+    // Testimonials Controls
+    &__controls {
+        // Positioning
+        position: absolute;
+        bottom: 0;
+        right: 60px;
+        // Flexbox Model
+        display: flex;
+        column-gap: 25px;
+        // Mixins
+        @include mobile {
+            // Positioning
+            top: 48px;
+            bottom: initial;
+            right: 0;
+            // Flexbox Model
+            column-gap: 15px;
+        }
+    }
+    &__btn {
+        // Mixins
+        @include resizeBtn(40px, 40px, 50%);
+        @include mobile {
+            @include resizeBtn(30px, 30px, 50%);
+        }
+        // Color
+        color: #858b93;
+        // Animation
+        transition: 0.3s;
+        // Other
+        cursor: pointer;
+        // Classes
+        &:hover {
+            // Color
+            color: #ef8f00;
+        }
+    }
+}
+// ===== ============ =====
 // ++++++++++++++++

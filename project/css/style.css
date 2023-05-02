@@ -1806,3 +1806,228 @@ button {
 .blog-item:nth-child(3) .blog-item__link {
   color: #ef8f00;
 }
+
+.testimonials {
+  margin-top: 140px;
+}
+@media (max-width: 46.25em) {
+  .testimonials {
+    margin-top: 80px;
+  }
+}
+.testimonials .container {
+  width: 1220px;
+}
+@media (max-width: 46.25em) {
+  .testimonials .container {
+    width: 319px;
+  }
+}
+.testimonials__inner {
+  position: relative;
+  min-height: 372px;
+}
+.testimonials__heading {
+  display: none;
+}
+@media (max-width: 46.25em) {
+  .testimonials__heading {
+    display: flex;
+    justify-content: center;
+    column-gap: 2px;
+  }
+}
+.testimonials__heading-gradient-text {
+  background: linear-gradient(to right, #f8d100, #f8d100);
+}
+.testimonials__wrap {
+  overflow: hidden;
+}
+@media (max-width: 46.25em) {
+  .testimonials__wrap {
+    margin-top: 55px;
+  }
+}
+.testimonials__list {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.testimonials__item {
+  flex-shrink: 0;
+  width: 385px;
+  height: 308px;
+  padding: 30px 40px 26px;
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: #282c30;
+  transition: 0.3s;
+}
+@media (max-width: 46.25em) {
+  .testimonials__item {
+    width: 100%;
+    height: 255px;
+    padding: 24px 20px 20px;
+    background-color: #282b2e;
+  }
+}
+.testimonials__item ~ .testimonials__item {
+  margin-left: 32px;
+}
+.testimonials__quotes-icon {
+  margin-left: 216px;
+  color: #282c30;
+  transition: 0.3s;
+}
+@media (max-width: 46.25em) {
+  .testimonials__quotes-icon {
+    height: 26px;
+    margin-left: 192px;
+    color: #494d52;
+  }
+}
+.testimonials__quotes {
+  margin-top: 26px;
+  color: #858b93;
+  opacity: 0.8;
+  font-weight: 400;
+  line-height: 1.625;
+  transition: 0.3s;
+}
+@media (max-width: 46.25em) {
+  .testimonials__quotes {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    line-height: 1.87;
+    color: #b1b1b1;
+  }
+}
+.testimonials__info {
+  display: flex;
+  align-items: center;
+  margin-top: 22px;
+}
+@media (max-width: 46.25em) {
+  .testimonials__info {
+    margin-top: 10px;
+  }
+}
+.testimonials__info-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+@media (max-width: 46.25em) {
+  .testimonials__info-wrap {
+    margin-left: 16px;
+  }
+}
+.testimonials__avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+@media (max-width: 46.25em) {
+  .testimonials__avatar {
+    width: 30px;
+    height: 30px;
+  }
+}
+.testimonials__name {
+  color: #f9f9f9;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.56;
+}
+@media (max-width: 46.25em) {
+  .testimonials__name {
+    font-size: 1.4rem;
+    line-height: 2;
+  }
+}
+.testimonials__job {
+  color: #858b93;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@media (max-width: 46.25em) {
+  .testimonials__job {
+    font-size: 1rem;
+    line-height: 2;
+  }
+}
+.testimonials__rating {
+  display: flex;
+  column-gap: 5px;
+  margin-left: 52px;
+}
+@media (max-width: 46.25em) {
+  .testimonials__rating {
+    margin-left: 40px;
+  }
+}
+.testimonials__item:hover {
+  background-color: #282c30;
+}
+.testimonials__item:hover .testimonials__quotes-icon {
+  color: #0cce84;
+  rotate: 180deg;
+}
+.testimonials__item:hover .testimonials__quotes {
+  color: #bcc6d0;
+}
+.testimonials__dots {
+  display: none;
+  justify-content: center;
+  column-gap: 5px;
+  margin: 20px auto 0;
+}
+@media (max-width: 46.25em) {
+  .testimonials__dots {
+    display: flex;
+  }
+}
+.testimonials__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  opacity: 0.3;
+}
+.testimonials__dot--active {
+  background-color: #ef8f00;
+  opacity: 1;
+}
+.testimonials__controls {
+  position: absolute;
+  bottom: 0;
+  right: 60px;
+  display: flex;
+  column-gap: 25px;
+}
+@media (max-width: 46.25em) {
+  .testimonials__controls {
+    top: 48px;
+    bottom: initial;
+    right: 0;
+    column-gap: 15px;
+  }
+}
+.testimonials__btn {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #858b93;
+  transition: 0.3s;
+  cursor: pointer;
+}
+@media (max-width: 46.25em) {
+  .testimonials__btn {
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+}
+.testimonials__btn:hover {
+  color: #ef8f00;
+}
